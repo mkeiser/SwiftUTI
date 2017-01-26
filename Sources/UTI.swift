@@ -9,14 +9,14 @@
 import Foundation
 
 #if os(iOS)
-import MobileCoreServices
+	import MobileCoreServices
 #elseif os(macOS)
-import CoreServices
+	import CoreServices
 #endif
 
-class UTI: RawRepresentable, Equatable {
+public class UTI: RawRepresentable, Equatable {
 
-	enum TagClass: String {
+	public enum TagClass: String {
 
 		case fileExtension = "public.filename-extension" // kUTTagClassFilenameExtension
 		case mimeType = "public.mime-type" //kUTTagClassMIMEType
@@ -32,9 +32,9 @@ class UTI: RawRepresentable, Equatable {
 		}
 	}
 
-	typealias RawValue = String
+	public typealias RawValue = String
 
-	let rawValue: String
+	public let rawValue: String
 
 
 	/// Convenience variable for internal use.
@@ -60,7 +60,7 @@ class UTI: RawRepresentable, Equatable {
 	/// - Parameter value: The value of the tag.
 	/// - Parameter conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
 	/// - Returns: An UTI instance representing the specified rawValue. If no known UTI with the specified tags is found, a dynamic UTI is created.
-	/// - Note: You should rarely need this method. It's usually simpler to use one of the specialized initialzers like 
+	/// - Note: You should rarely need this method. It's usually simpler to use one of the specialized initialzers like
 	///  ```convenience init?(withExtension fileExtension: String, conformingTo conforming: UTI? = nil)```
 
 	public convenience init(withTagClass tagClass: TagClass, value: String, conformingTo conforming: UTI? = nil) {
@@ -238,7 +238,7 @@ class UTI: RawRepresentable, Equatable {
 	}
 
 	/// Returns ```true``` if the receiver is a dynamic UTI.
-	
+
 	public var isDynamic: Bool {
 
 		return self.rawValue.hasPrefix("dyn.")
@@ -265,7 +265,7 @@ class UTI: RawRepresentable, Equatable {
 	}
 }
 
-extension UTI {
+public extension UTI {
 
 	//Generated like that:
 
@@ -404,27 +404,27 @@ extension UTI {
 
 #if os(OSX)
 
-extension OSType {
+	extension OSType {
 
 
-	/// Returns the OSType encoded as a String.
+		/// Returns the OSType encoded as a String.
+
+		var string: String {
+
+			let unmanagedString = UTCreateStringForOSType(self)
+
+			return unmanagedString.takeRetainedValue() as String
+		}
+
+
+		/// Initializes a OSType from a String.
+		///
+		/// - Parameter string: A String representing an OSType.
+		
+		init(with string: String) {
+			
+			self = UTGetOSTypeFromString(string as CFString)
+		}
+	}
 	
-	var string: String {
-
-		let unmanagedString = UTCreateStringForOSType(self)
-
-		return unmanagedString.takeRetainedValue() as String
-	}
-
-
-	/// Initializes a OSType from a String.
-	///
-	/// - Parameter string: A String representing an OSType.
-
-	init(with string: String) {
-
-		self = UTGetOSTypeFromString(string as CFString)
-	}
-}
-
 #endif
