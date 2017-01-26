@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		D86B4E211E39F252009F6559 /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTI.swift; path = ../Sources/UTI.swift; sourceTree = "<group>"; };
-		D86B4E221E39F252009F6559 /* UTITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTITests.swift; path = ../Tests/UTITests.swift; sourceTree = "<group>"; };
+		D86B4E221E39F252009F6559 /* UTITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTITests.swift; path = ../Tests/UTITests/UTITests.swift; sourceTree = "<group>"; };
 		D86B4E291E39F33C009F6559 /* ExampleIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86B4E2B1E39F33D009F6559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D86B4E301E39F33D009F6559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
