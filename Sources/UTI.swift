@@ -305,6 +305,7 @@ public extension UTI {
 	static  let  AssemblyLanguageSource      =  UTI(rawValue:  kUTTypeAssemblyLanguageSource      as  String)
 	static  let  CSource                     =  UTI(rawValue:  kUTTypeCSource                     as  String)
 	static  let  ObjectiveCSource            =  UTI(rawValue:  kUTTypeObjectiveCSource            as  String)
+	@available(OSX 10.11, *)
 	static  let  SwiftSource                 =  UTI(rawValue:  kUTTypeSwiftSource                 as  String)
 	static  let  CPlusPlusSource             =  UTI(rawValue:  kUTTypeCPlusPlusSource             as  String)
 	static  let  ObjectiveCPlusPlusSource    =  UTI(rawValue:  kUTTypeObjectiveCPlusPlusSource    as  String)
