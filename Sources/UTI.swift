@@ -241,7 +241,7 @@ public class UTI: RawRepresentable, Equatable {
 
 	public var isDynamic: Bool {
 
-		return self.rawValue.hasPrefix("dyn.")
+		return UTTypeIsDynamic(self.rawCFValue)
 	}
 
 	/// Returns all UTIs that are associated with a specified tag.
