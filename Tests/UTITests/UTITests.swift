@@ -29,8 +29,8 @@ class UTI_Tests: XCTestCase {
     func testEquality() {
 
 		let uti1 = UTI(rawValue: kUTTypePDF as String)
-		let uti2 = UTI.PDF
-		let uti3 = UTI.RTFD
+		let uti2 = UTI.pdf
+		let uti3 = UTI.rtf
 
 		XCTAssertTrue(uti1 == uti2)
 		XCTAssertTrue(uti2 == uti1)
@@ -40,9 +40,9 @@ class UTI_Tests: XCTestCase {
 
 	func testConformance() {
 
-		let uti1 = UTI.Text
-		let uti2 = UTI.RTF
-		let uti3 = UTI.Directory
+		let uti1 = UTI.text
+		let uti2 = UTI.rtf
+		let uti3 = UTI.directory
 
 		XCTAssertTrue( uti2.conforms(to: uti1) )
 		XCTAssertFalse( uti1.conforms(to: uti2) )
@@ -51,7 +51,7 @@ class UTI_Tests: XCTestCase {
 
 	func testTags() {
 
-		let uti1 = UTI.PDF
+		let uti1 = UTI.pdf
 
 		var uti2 = UTI(withExtension: "pdf")
 		XCTAssertTrue( uti1 == uti2 )
@@ -78,7 +78,7 @@ class UTI_Tests: XCTestCase {
 
 	func testDynamic() {
 
-		XCTAssertFalse(UTI.PDF.isDynamic)
+		XCTAssertFalse(UTI.pdf.isDynamic)
 
 		XCTAssertTrue(UTI(withExtension: "random_unknown_value_xxxxx").isDynamic)
 	}

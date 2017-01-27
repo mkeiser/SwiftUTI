@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-		if UTI.AppleScript == UTI(rawValue:kUTTypeAppleScript as UTI.RawValue) {
+		if UTI.appleScript == UTI(rawValue:kUTTypeAppleScript as UTI.RawValue) {
 
 			NSLog("It worked")
 		} else {

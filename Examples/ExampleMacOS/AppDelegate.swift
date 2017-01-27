@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-		if UTI.AppleScript == UTI(rawValue:kUTTypeAppleScript as UTI.RawValue) {
+		if UTI.appleScript == UTI(rawValue:kUTTypeAppleScript as UTI.RawValue) {
 
 			NSLog("It worked")
 		} else {
