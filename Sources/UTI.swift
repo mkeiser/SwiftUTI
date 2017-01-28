@@ -14,7 +14,17 @@ import Foundation
 	import CoreServices
 #endif
 
+/// Instances of the UTI class represent a specific Universal Type Identifier, e.g. kUTTypeMPEG4.
+
 public class UTI: RawRepresentable, Equatable {
+
+
+	/// The TagClass enum represents the supported tag classes.
+	///
+	/// - fileExtension: kUTTagClassFilenameExtension
+	/// - mimeType: kUTTagClassMIMEType
+	/// - pbType: kUTTagClassNSPboardType
+	/// - osType: kUTTagClassOSType
 
 	public enum TagClass: String {
 
@@ -27,6 +37,7 @@ public class UTI: RawRepresentable, Equatable {
 		#endif
 
 		/// Convenience variable for internal use.
+		
 		fileprivate var rawCFValue: CFString {
 			return self.rawValue as CFString
 		}
@@ -38,10 +49,14 @@ public class UTI: RawRepresentable, Equatable {
 
 
 	/// Convenience variable for internal use.
+
 	private var rawCFValue: CFString {
 
 		return self.rawValue as CFString
 	}
+
+	// MARK: Initialization
+
 
 	/// This is the designated initializer of the UTI class.
 	///
@@ -124,6 +139,8 @@ public class UTI: RawRepresentable, Equatable {
 
 	#endif
 
+	// MARK: Accessing Tags
+
 	/// Returns the tag with the specified class.
 	///
 	/// - Parameter tagClass: The tag class to return.
@@ -189,10 +206,36 @@ public class UTI: RawRepresentable, Equatable {
 		return tags as Array<String>
 	}
 
+	// MARK: List all UTIs associated with a tag
+
+
+	/// Returns all UTIs that are associated with a specified tag.
+	///
+	/// - Parameters:
+	///   - tag: The class of the specified tag.
+	///   - value: The value of the tag.
+	///   - conforming: If specified, the returned UTIs must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
+	/// - Returns: An array of all UTIs that satisfy the specified parameters.
+
+	public static func utis(for tag: TagClass, value: String, conformingTo conforming: UTI? = nil) -> Array<UTI> {
+
+		let unamanagedIdentifiers = UTTypeCreateAllIdentifiersForTag(tag.rawCFValue, value as CFString, conforming?.rawCFValue)
+
+
+		guard let identifiers = unamanagedIdentifiers?.takeRetainedValue() as? Array<CFString> else {
+			return []
+		}
+
+		return identifiers.flatMap { UTI(rawValue: $0 as String) }
+	}
+
+	// MARK: Equality and Conformance to other UTIs
+
+
 	/// Checks if the receiver conforms to a specified UTI.
 	///
 	/// - Parameter otherUTI: The UTI to which the receiver is compared.
-	/// - Returns: ```true``` if the receiver conforms to the specified UTI, ```fals```otherwise.
+	/// - Returns: ```true``` if the receiver conforms to the specified UTI, ```false```otherwise.
 
 	public func conforms(to otherUTI: UTI) -> Bool {
 
@@ -203,6 +246,8 @@ public class UTI: RawRepresentable, Equatable {
 
 		return UTTypeEqual(lhs.rawCFValue, rhs.rawCFValue) as Bool
 	}
+
+	// MARK: Accessing Information about an UTI
 
 	public var description: String? {
 
@@ -243,27 +288,10 @@ public class UTI: RawRepresentable, Equatable {
 
 		return UTTypeIsDynamic(self.rawCFValue)
 	}
-
-	/// Returns all UTIs that are associated with a specified tag.
-	///
-	/// - Parameters:
-	///   - tag: The class of the specified tag.
-	///   - value: The value of the tag.
-	///   - conforming: If specified, the returned UTIs must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
-	/// - Returns: An array of all UTIs that satisfy the specified parameters.
-
-	public static func utis(for tag: TagClass, value: String, conformingTo conforming: UTI? = nil) -> Array<UTI> {
-
-		let unamanagedIdentifiers = UTTypeCreateAllIdentifiersForTag(tag.rawCFValue, value as CFString, conforming?.rawCFValue)
-
-
-		guard let identifiers = unamanagedIdentifiers?.takeRetainedValue() as? Array<CFString> else {
-			return []
-		}
-
-		return identifiers.flatMap { UTI(rawValue: $0 as String) }
-	}
 }
+
+
+// MARK: System defined UTIs
 
 public extension UTI {
 
