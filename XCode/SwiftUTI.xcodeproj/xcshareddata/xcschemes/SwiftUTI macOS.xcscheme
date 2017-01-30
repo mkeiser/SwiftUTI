@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8ECF56B1E3F5F3200E9A903"
                BuildableName = "SwiftUTI.framework"
-               BlueprintName = "SwiftUTI macOS"
+               BlueprintName = "SwiftUTI_macOS"
                ReferencedContainer = "container:SwiftUTI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8ECF56B1E3F5F3200E9A903"
             BuildableName = "SwiftUTI.framework"
-            BlueprintName = "SwiftUTI macOS"
+            BlueprintName = "SwiftUTI_macOS"
             ReferencedContainer = "container:SwiftUTI.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8ECF56B1E3F5F3200E9A903"
             BuildableName = "SwiftUTI.framework"
-            BlueprintName = "SwiftUTI macOS"
+            BlueprintName = "SwiftUTI_macOS"
             ReferencedContainer = "container:SwiftUTI.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

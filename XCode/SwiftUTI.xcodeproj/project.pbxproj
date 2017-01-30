@@ -40,10 +40,10 @@
 		D8ECF56E1E3F5F3200E9A903 /* SwiftUTI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUTI.h; sourceTree = "<group>"; };
 		D8ECF56F1E3F5F3200E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUTI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUTITests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests_macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUTITests_macOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ECF5C31E3F6C8500E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8ECF5CC1E3F6CB000E9A903 /* UTITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UTITests.swift; path = UTITests/UTITests.swift; sourceTree = "<group>"; };
-		D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUTITests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUTITests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ECF5D61E3F6D6200E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,8 +98,8 @@
 			children = (
 				D8ECF56C1E3F5F3200E9A903 /* SwiftUTI.framework */,
 				D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */,
-				D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests macOS.xctest */,
-				D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests iOS.xctest */,
+				D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests_macOS.xctest */,
+				D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests_iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,9 +170,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D8ECF56B1E3F5F3200E9A903 /* SwiftUTI macOS */ = {
+		D8ECF56B1E3F5F3200E9A903 /* SwiftUTI_macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ECF5711E3F5F3200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI macOS" */;
+			buildConfigurationList = D8ECF5711E3F5F3200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI_macOS" */;
 			buildPhases = (
 				D8ECF5671E3F5F3200E9A903 /* Sources */,
 				D8ECF5681E3F5F3200E9A903 /* Frameworks */,
@@ -183,14 +183,14 @@
 			);
 			dependencies = (
 			);
-			name = "SwiftUTI macOS";
+			name = SwiftUTI_macOS;
 			productName = SwiftUTI;
 			productReference = D8ECF56C1E3F5F3200E9A903 /* SwiftUTI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8ECF5751E3F5FF600E9A903 /* SwiftUTI iOS */ = {
+		D8ECF5751E3F5FF600E9A903 /* SwiftUTI_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ECF57C1E3F5FF600E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI iOS" */;
+			buildConfigurationList = D8ECF57C1E3F5FF600E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI_iOS" */;
 			buildPhases = (
 				D8ECF5761E3F5FF600E9A903 /* Sources */,
 				D8ECF5781E3F5FF600E9A903 /* Frameworks */,
@@ -201,14 +201,14 @@
 			);
 			dependencies = (
 			);
-			name = "SwiftUTI iOS";
+			name = SwiftUTI_iOS;
 			productName = SwiftUTI;
 			productReference = D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8ECF5BE1E3F6C8400E9A903 /* SwiftUTITests macOS */ = {
+		D8ECF5BE1E3F6C8400E9A903 /* SwiftUTITests_macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ECF5C91E3F6C8500E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests macOS" */;
+			buildConfigurationList = D8ECF5C91E3F6C8500E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests_macOS" */;
 			buildPhases = (
 				D8ECF5BB1E3F6C8400E9A903 /* Sources */,
 				D8ECF5BC1E3F6C8400E9A903 /* Frameworks */,
@@ -219,14 +219,14 @@
 			dependencies = (
 				D8ECF5C61E3F6C8500E9A903 /* PBXTargetDependency */,
 			);
-			name = "SwiftUTITests macOS";
+			name = SwiftUTITests_macOS;
 			productName = "SwiftUTITests macOS";
-			productReference = D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests macOS.xctest */;
+			productReference = D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests_macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D8ECF5D11E3F6D6200E9A903 /* SwiftUTITests iOS */ = {
+		D8ECF5D11E3F6D6200E9A903 /* SwiftUTITests_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ECF5DA1E3F6D6200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests iOS" */;
+			buildConfigurationList = D8ECF5DA1E3F6D6200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests_iOS" */;
 			buildPhases = (
 				D8ECF5CE1E3F6D6200E9A903 /* Sources */,
 				D8ECF5CF1E3F6D6200E9A903 /* Frameworks */,
@@ -237,9 +237,9 @@
 			dependencies = (
 				D8ECF5D91E3F6D6200E9A903 /* PBXTargetDependency */,
 			);
-			name = "SwiftUTITests iOS";
+			name = SwiftUTITests_iOS;
 			productName = "SwiftUTITests iOS";
-			productReference = D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests iOS.xctest */;
+			productReference = D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests_iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -284,10 +284,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8ECF56B1E3F5F3200E9A903 /* SwiftUTI macOS */,
-				D8ECF5751E3F5FF600E9A903 /* SwiftUTI iOS */,
-				D8ECF5BE1E3F6C8400E9A903 /* SwiftUTITests macOS */,
-				D8ECF5D11E3F6D6200E9A903 /* SwiftUTITests iOS */,
+				D8ECF56B1E3F5F3200E9A903 /* SwiftUTI_macOS */,
+				D8ECF5751E3F5FF600E9A903 /* SwiftUTI_iOS */,
+				D8ECF5BE1E3F6C8400E9A903 /* SwiftUTITests_macOS */,
+				D8ECF5D11E3F6D6200E9A903 /* SwiftUTITests_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -361,12 +361,12 @@
 /* Begin PBXTargetDependency section */
 		D8ECF5C61E3F6C8500E9A903 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8ECF56B1E3F5F3200E9A903 /* SwiftUTI macOS */;
+			target = D8ECF56B1E3F5F3200E9A903 /* SwiftUTI_macOS */;
 			targetProxy = D8ECF5C51E3F6C8500E9A903 /* PBXContainerItemProxy */;
 		};
 		D8ECF5D91E3F6D6200E9A903 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8ECF5751E3F5FF600E9A903 /* SwiftUTI iOS */;
+			target = D8ECF5751E3F5FF600E9A903 /* SwiftUTI_iOS */;
 			targetProxy = D8ECF5D81E3F6D6200E9A903 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -635,7 +635,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ECF5711E3F5F3200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI macOS" */ = {
+		D8ECF5711E3F5F3200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ECF5721E3F5F3200E9A903 /* Debug */,
@@ -644,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ECF57C1E3F5FF600E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI iOS" */ = {
+		D8ECF57C1E3F5FF600E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTI_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ECF57D1E3F5FF600E9A903 /* Debug */,
@@ -653,21 +653,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ECF5C91E3F6C8500E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests macOS" */ = {
+		D8ECF5C91E3F6C8500E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ECF5C71E3F6C8500E9A903 /* Debug */,
 				D8ECF5C81E3F6C8500E9A903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D8ECF5DA1E3F6D6200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests iOS" */ = {
+		D8ECF5DA1E3F6D6200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8ECF5DB1E3F6D6200E9A903 /* Debug */,
 				D8ECF5DC1E3F6D6200E9A903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
