@@ -18,22 +18,29 @@ import Foundation
 
 public class UTI: RawRepresentable, Equatable {
 
-
-	/// The TagClass enum represents the supported tag classes.
-	///
-	/// - fileExtension: kUTTagClassFilenameExtension
-	/// - mimeType: kUTTagClassMIMEType
-	/// - pbType: kUTTagClassNSPboardType
-	/// - osType: kUTTagClassOSType
-
+	/**
+	The TagClass enum represents the supported tag classes.
+	
+	- fileExtension: kUTTagClassFilenameExtension
+	- mimeType: kUTTagClassMIMEType
+	- pbType: kUTTagClassNSPboardType
+	- osType: kUTTagClassOSType
+	*/
 	public enum TagClass: String {
 
-		case fileExtension = "public.filename-extension" // kUTTagClassFilenameExtension
-		case mimeType = "public.mime-type" //kUTTagClassMIMEType
+		/// Equivalent to kUTTagClassFilenameExtension
+		case fileExtension = "public.filename-extension"
+
+		/// Equivalent to kUTTagClassMIMEType
+		case mimeType = "public.mime-type"
 
 		#if os (macOS)
-		case pbType =  "com.apple.nspboard-type" //kUTTagClassNSPboardType
-		case osType =  "com.apple.ostype" //kUTTagClassOSType
+
+		/// Equivalent to kUTTagClassNSPboardType
+		case pbType =  "com.apple.nspboard-type"
+
+		/// Equivalent to kUTTagClassOSType
+		case osType =  "com.apple.ostype"
 		#endif
 
 		/// Convenience variable for internal use.
@@ -44,7 +51,6 @@ public class UTI: RawRepresentable, Equatable {
 	}
 
 	public typealias RawValue = String
-
 	public let rawValue: String
 
 
@@ -58,25 +64,38 @@ public class UTI: RawRepresentable, Equatable {
 	// MARK: Initialization
 
 
-	/// This is the designated initializer of the UTI class.
-	///
-	/// - Parameter rawValue: A string that is a Universal Type Identifier, i.e. "com.foobar.baz" or a constant like kUTTypeMP3.
-	/// - Returns: An UTI instance representing the specified rawValue.
-	/// - Note: You should rarely use this method. The preferred way to initialize a known UTI is to use its static variable (i.e. UTI.PDF). You should make an extension to make your own types available as static variables.
+	/**
+	
+	This is the designated initializer of the UTI class.
+	
+	 - Parameters:
+			- rawValue: A string that is a Universal Type Identifier, i.e. "com.foobar.baz" or a constant like kUTTypeMP3.
+	 - Returns:
+			An UTI instance representing the specified rawValue.
+	 - Note:
+			You should rarely use this method. The preferred way to initialize a known UTI is to use its static variable (i.e. UTI.pdf). You should make an extension to make your own types available as static variables.
+	
+	*/
 
 	public required init(rawValue: UTI.RawValue) {
 
 		self.rawValue = rawValue
 	}
 
-	/// Initialize an UTI with a tag of a specified class.
-	///
-	/// - Parameter withTagClass: The class of the tag.
-	/// - Parameter value: The value of the tag.
-	/// - Parameter conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
-	/// - Returns: An UTI instance representing the specified rawValue. If no known UTI with the specified tags is found, a dynamic UTI is created.
-	/// - Note: You should rarely need this method. It's usually simpler to use one of the specialized initialzers like
-	///  ```convenience init?(withExtension fileExtension: String, conformingTo conforming: UTI? = nil)```
+	/**
+
+	Initialize an UTI with a tag of a specified class.
+
+	- Parameters:
+		- tagClass: The class of the tag.
+		- value: The value of the tag.
+		- conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
+	- Returns:
+		An UTI instance representing the specified rawValue. If no known UTI with the specified tags is found, a dynamic UTI is created.
+	- Note:
+		You should rarely need this method. It's usually simpler to use one of the specialized initialzers like
+		```convenience init?(withExtension fileExtension: String, conformingTo conforming: UTI? = nil)```
+	*/
 
 	public convenience init(withTagClass tagClass: TagClass, value: String, conformingTo conforming: UTI? = nil) {
 
@@ -90,22 +109,32 @@ public class UTI: RawRepresentable, Equatable {
 		self.init(rawValue: identifier)
 	}
 
-	/// Initialize an UTI with a file extension.
-	///
-	/// - Parameter withExtension: The file extension (e.g. "txt").
-	/// - Parameter conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
-	/// - Returns: An UTI corresponding to the specified values.
+	/**
+
+	Initialize an UTI with a file extension.
+	
+	- Parameters:
+		- withExtension: The file extension (e.g. "txt").
+		- conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
+	- Returns: 
+		An UTI corresponding to the specified values.
+	**/
 
 	public convenience init(withExtension fileExtension: String, conformingTo conforming: UTI? = nil) {
 
 		self.init(withTagClass:.fileExtension, value: fileExtension, conformingTo: conforming)
 	}
 
-	/// Initialize an UTI with a MIME type.
-	///
-	/// - Parameter withMimeType: The MIME type (e.g. "text/plain").
-	/// - Parameter conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
-	/// - Returns: An UTI corresponding to the specified values.
+	/**
+
+	Initialize an UTI with a MIME type.
+	
+	- Parameters:
+		- mimeType: The MIME type (e.g. "text/plain").
+		- conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
+	- Returns:
+		An UTI corresponding to the specified values.
+	*/
 
 	public convenience init(withMimeType mimeType: String, conformingTo conforming: UTI? = nil) {
 
@@ -114,23 +143,32 @@ public class UTI: RawRepresentable, Equatable {
 
 	#if os(macOS)
 
-	/// Initialize an UTI with a pasteboard type.
-	///
-	/// - Parameter withPBType: The pasteboard type (e.g. NSPDFPboardType).
-	/// - Parameter conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
-	/// - Returns: An UTI corresponding to the specified values.
+	/**
 
+	Initialize an UTI with a pasteboard type.
+	
+	- Parameters:
+		- pbType: The pasteboard type (e.g. NSPDFPboardType).
+		- conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
+	- Returns:
+		An UTI corresponding to the specified values.
+	*/
 	public convenience init(withPBType pbType: String, conformingTo conforming: UTI? = nil) {
 
 		self.init(withTagClass:.pbType, value: pbType, conformingTo: conforming)
 	}
 
-	/// Initialize an UTI with a OSType.
-	///
-	/// - Parameter withOSType: The OSType type as a string (e.g. "PDF ").
-	/// - Parameter conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
-	/// - Returns: An UTI corresponding to the specified values.
-	/// - Note: You can use the variable ```OSType.string``` to get a string from an actual OSType.
+	/**
+	Initialize an UTI with a OSType.
+	
+	- Parameters:
+		- osType: The OSType type as a string (e.g. "PDF ").
+		- conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
+	- Returns:
+		An UTI corresponding to the specified values.
+	- Note:
+		You can use the variable ```OSType.string``` to get a string from an actual OSType.
+	*/
 
 	public convenience init(withOSType osType: String, conformingTo conforming: UTI? = nil) {
 
@@ -141,10 +179,15 @@ public class UTI: RawRepresentable, Equatable {
 
 	// MARK: Accessing Tags
 
-	/// Returns the tag with the specified class.
-	///
-	/// - Parameter tagClass: The tag class to return.
-	/// - Returns: The requested tag, or nil if there is no tag of the specified class.
+	/**
+
+	Returns the tag with the specified class.
+	
+	- Parameters:
+		- tagClass: The tag class to return.
+	- Returns:
+		The requested tag, or nil if there is no tag of the specified class.
+	*/
 
 	public func tag(with tagClass: TagClass) -> String? {
 
@@ -190,10 +233,15 @@ public class UTI: RawRepresentable, Equatable {
 
 	#endif
 
-	/// Returns all tags of the specified tag class.
-	///
-	/// - Parameter tagClass: The class of the requested tags.
-	/// - Returns: An array of all tags of the receiver of the specified class.
+	/**
+
+	Returns all tags of the specified tag class.
+	
+	- Parameters:
+		- tagClass: The class of the requested tags.
+	- Returns:
+		An array of all tags of the receiver of the specified class.
+	*/
 
 	public func tags(with tagClass: TagClass) -> Array<String> {
 
@@ -209,13 +257,16 @@ public class UTI: RawRepresentable, Equatable {
 	// MARK: List all UTIs associated with a tag
 
 
-	/// Returns all UTIs that are associated with a specified tag.
-	///
-	/// - Parameters:
-	///   - tag: The class of the specified tag.
-	///   - value: The value of the tag.
-	///   - conforming: If specified, the returned UTIs must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
-	/// - Returns: An array of all UTIs that satisfy the specified parameters.
+	/**
+	Returns all UTIs that are associated with a specified tag.
+	
+	- Parameters:
+	  - tag: The class of the specified tag.
+	  - value: The value of the tag.
+	  - conforming: If specified, the returned UTIs must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.
+	- Returns:
+		An array of all UTIs that satisfy the specified parameters.
+	*/
 
 	public static func utis(for tag: TagClass, value: String, conformingTo conforming: UTI? = nil) -> Array<UTI> {
 
@@ -231,11 +282,15 @@ public class UTI: RawRepresentable, Equatable {
 
 	// MARK: Equality and Conformance to other UTIs
 
+	/**
 
-	/// Checks if the receiver conforms to a specified UTI.
-	///
-	/// - Parameter otherUTI: The UTI to which the receiver is compared.
-	/// - Returns: ```true``` if the receiver conforms to the specified UTI, ```false```otherwise.
+	Checks if the receiver conforms to a specified UTI.
+	
+	- Parameters:
+		- otherUTI: The UTI to which the receiver is compared.
+	- Returns:
+		```true``` if the receiver conforms to the specified UTI, ```false```otherwise.
+	*/
 
 	public func conforms(to otherUTI: UTI) -> Bool {
 
@@ -249,6 +304,8 @@ public class UTI: RawRepresentable, Equatable {
 
 	// MARK: Accessing Information about an UTI
 
+	/// Returns the localized, user-readable type description string associated with a uniform type identifier.
+	
 	public var description: String? {
 
 		let unamanagedDescription = UTTypeCopyDescription(self.rawCFValue)
@@ -260,6 +317,8 @@ public class UTI: RawRepresentable, Equatable {
 		return description
 	}
 
+	/// Returns a uniform type’s declaration as a Dictionary, or nil if if no declaration for that type can be found.
+
 	public var declaration: [AnyHashable:Any]? {
 
 		let unamanagedDeclaration = UTTypeCopyDeclaration(self.rawCFValue)
@@ -270,6 +329,8 @@ public class UTI: RawRepresentable, Equatable {
 
 		return declaration
 	}
+
+	/// Returns the location of a bundle containing the declaration for a type, or nil if the bundle could not be located.
 
 	public var declaringBundleURL: URL? {
 
