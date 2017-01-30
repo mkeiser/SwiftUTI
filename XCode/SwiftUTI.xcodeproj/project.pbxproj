@@ -11,7 +11,28 @@
 		D8ECF5741E3F5FEC00E9A903 /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF5481E3F5C8E00E9A903 /* UTI.swift */; };
 		D8ECF5771E3F5FF600E9A903 /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF5481E3F5C8E00E9A903 /* UTI.swift */; };
 		D8ECF57A1E3F5FF600E9A903 /* SwiftUTI.h in Headers */ = {isa = PBXBuildFile; fileRef = D8ECF56E1E3F5F3200E9A903 /* SwiftUTI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8ECF5C41E3F6C8500E9A903 /* SwiftUTI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8ECF56C1E3F5F3200E9A903 /* SwiftUTI.framework */; };
+		D8ECF5CD1E3F6CD300E9A903 /* UTITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF5CC1E3F6CB000E9A903 /* UTITests.swift */; };
+		D8ECF5D71E3F6D6200E9A903 /* SwiftUTI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */; };
+		D8ECF5DD1E3F6D6D00E9A903 /* UTITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECF5CC1E3F6CB000E9A903 /* UTITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8ECF5C51E3F6C8500E9A903 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8ECF5331E3F5C4800E9A903 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8ECF56B1E3F5F3200E9A903;
+			remoteInfo = "SwiftUTI macOS";
+		};
+		D8ECF5D81E3F6D6200E9A903 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8ECF5331E3F5C4800E9A903 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8ECF5751E3F5FF600E9A903;
+			remoteInfo = "SwiftUTI iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D8ECF5481E3F5C8E00E9A903 /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTI.swift; sourceTree = "<group>"; };
@@ -19,6 +40,11 @@
 		D8ECF56E1E3F5F3200E9A903 /* SwiftUTI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUTI.h; sourceTree = "<group>"; };
 		D8ECF56F1E3F5F3200E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUTI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUTITests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ECF5C31E3F6C8500E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8ECF5CC1E3F6CB000E9A903 /* UTITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UTITests.swift; path = UTITests/UTITests.swift; sourceTree = "<group>"; };
+		D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUTITests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8ECF5D61E3F6D6200E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +62,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8ECF5BC1E3F6C8400E9A903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8ECF5C41E3F6C8500E9A903 /* SwiftUTI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8ECF5CF1E3F6D6200E9A903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8ECF5D71E3F6D6200E9A903 /* SwiftUTI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -43,7 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				D8ECF5471E3F5C8E00E9A903 /* Sources */,
+				D8ECF5CA1E3F6CB000E9A903 /* Tests */,
 				D8ECF56D1E3F5F3200E9A903 /* Supporting Files */,
+				D8ECF5C01E3F6C8500E9A903 /* SwiftUTITests macOS */,
+				D8ECF5D31E3F6D6200E9A903 /* SwiftUTITests iOS */,
 				D8ECF53D1E3F5C4900E9A903 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +98,8 @@
 			children = (
 				D8ECF56C1E3F5F3200E9A903 /* SwiftUTI.framework */,
 				D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */,
+				D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests macOS.xctest */,
+				D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +121,31 @@
 			);
 			name = "Supporting Files";
 			path = SwiftUTI;
+			sourceTree = "<group>";
+		};
+		D8ECF5C01E3F6C8500E9A903 /* SwiftUTITests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D8ECF5C31E3F6C8500E9A903 /* Info.plist */,
+			);
+			path = "SwiftUTITests macOS";
+			sourceTree = "<group>";
+		};
+		D8ECF5CA1E3F6CB000E9A903 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D8ECF5CC1E3F6CB000E9A903 /* UTITests.swift */,
+			);
+			name = Tests;
+			path = ../Tests;
+			sourceTree = "<group>";
+		};
+		D8ECF5D31E3F6D6200E9A903 /* SwiftUTITests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D8ECF5D61E3F6D6200E9A903 /* Info.plist */,
+			);
+			path = "SwiftUTITests iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,12 +206,49 @@
 			productReference = D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D8ECF5BE1E3F6C8400E9A903 /* SwiftUTITests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8ECF5C91E3F6C8500E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests macOS" */;
+			buildPhases = (
+				D8ECF5BB1E3F6C8400E9A903 /* Sources */,
+				D8ECF5BC1E3F6C8400E9A903 /* Frameworks */,
+				D8ECF5BD1E3F6C8400E9A903 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8ECF5C61E3F6C8500E9A903 /* PBXTargetDependency */,
+			);
+			name = "SwiftUTITests macOS";
+			productName = "SwiftUTITests macOS";
+			productReference = D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8ECF5D11E3F6D6200E9A903 /* SwiftUTITests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8ECF5DA1E3F6D6200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests iOS" */;
+			buildPhases = (
+				D8ECF5CE1E3F6D6200E9A903 /* Sources */,
+				D8ECF5CF1E3F6D6200E9A903 /* Frameworks */,
+				D8ECF5D01E3F6D6200E9A903 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8ECF5D91E3F6D6200E9A903 /* PBXTargetDependency */,
+			);
+			name = "SwiftUTITests iOS";
+			productName = "SwiftUTITests iOS";
+			productReference = D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D8ECF5331E3F5C4800E9A903 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Tristan Inc.";
 				TargetAttributes = {
@@ -150,6 +259,16 @@
 					};
 					D8ECF5751E3F5FF600E9A903 = {
 						DevelopmentTeam = V85GBYB7B9;
+					};
+					D8ECF5BE1E3F6C8400E9A903 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V85GBYB7B9;
+						ProvisioningStyle = Automatic;
+					};
+					D8ECF5D11E3F6D6200E9A903 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V85GBYB7B9;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -167,6 +286,8 @@
 			targets = (
 				D8ECF56B1E3F5F3200E9A903 /* SwiftUTI macOS */,
 				D8ECF5751E3F5FF600E9A903 /* SwiftUTI iOS */,
+				D8ECF5BE1E3F6C8400E9A903 /* SwiftUTITests macOS */,
+				D8ECF5D11E3F6D6200E9A903 /* SwiftUTITests iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +301,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D8ECF57B1E3F5FF600E9A903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8ECF5BD1E3F6C8400E9A903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8ECF5D01E3F6D6200E9A903 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,7 +340,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8ECF5BB1E3F6C8400E9A903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8ECF5CD1E3F6CD300E9A903 /* UTITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8ECF5CE1E3F6D6200E9A903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8ECF5DD1E3F6D6D00E9A903 /* UTITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8ECF5C61E3F6C8500E9A903 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8ECF56B1E3F5F3200E9A903 /* SwiftUTI macOS */;
+			targetProxy = D8ECF5C51E3F6C8500E9A903 /* PBXContainerItemProxy */;
+		};
+		D8ECF5D91E3F6D6200E9A903 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8ECF5751E3F5FF600E9A903 /* SwiftUTI iOS */;
+			targetProxy = D8ECF5D81E3F6D6200E9A903 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D8ECF5421E3F5C4900E9A903 /* Debug */ = {
@@ -401,6 +565,64 @@
 			};
 			name = Release;
 		};
+		D8ECF5C71E3F6C8500E9A903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = "SwiftUTITests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tristan.SwiftUTITests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D8ECF5C81E3F6C8500E9A903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = "SwiftUTITests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tristan.SwiftUTITests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D8ECF5DB1E3F6D6200E9A903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = "SwiftUTITests iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tristan.SwiftUTITests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D8ECF5DC1E3F6D6200E9A903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = "SwiftUTITests iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tristan.SwiftUTITests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,6 +652,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D8ECF5C91E3F6C8500E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8ECF5C71E3F6C8500E9A903 /* Debug */,
+				D8ECF5C81E3F6C8500E9A903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8ECF5DA1E3F6D6200E9A903 /* Build configuration list for PBXNativeTarget "SwiftUTITests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8ECF5DB1E3F6D6200E9A903 /* Debug */,
+				D8ECF5DC1E3F6D6200E9A903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

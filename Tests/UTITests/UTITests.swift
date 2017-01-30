@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftUTI
 
 #if os(iOS)
 	import MobileCoreServices
