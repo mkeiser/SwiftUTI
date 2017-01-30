@@ -19,6 +19,8 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 
+	This module makes it very simple to work with Apples Universal Type Identifiers.
+
                        DESC
 
   s.homepage         = 'https://github.com/mkeiser/SwiftUTI'
@@ -31,10 +33,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
 
-  s.source_files = 'SwiftUTI/Classes/**/*'
+  s.source_files = 'Sources/*'
 
-  spec.osx.framework = 'CoreServices'
-  spec.ios.framework = 'MobileCoreServices'
+  s.osx.framework = 'CoreServices'
+  s.ios.framework = 'MobileCoreServices'
 
   # s.resource_bundles = {
   #   'SwiftUTI' => ['SwiftUTI/Assets/*.png']
