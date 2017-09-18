@@ -42,7 +42,7 @@ Your custom type is then accessible like this: `UTI.myDocument`.
 
 ## Working with Tags
 
-##### Initialize from tags:
+##### Initializing from tags:
 
 Initializing an UTI from a file extension:
 
@@ -60,7 +60,7 @@ let fileUTI = UTI(withExtension: fileURL.pathExtension, conformingTo: UTI.packag
 
 There are similar APIs to work with MIME types, pasteboard types, and OSTypes.
 
-##### Access tags:
+##### Accessing tags:
 
 You can easily access tags from any UTI instance. For example to get the MIME type of PDFs, simply call `UTI.pdf.mimeType`.
 
