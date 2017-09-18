@@ -40,7 +40,27 @@ public extension UTI {
 
 Your custom type is then accessible like this: `UTI.myDocument`.
 
-##Tags
+##Working with Tags
 
-You can easily create UTIs from any tag class, as well as access tags from an UTI instance.  For example to get the MIME type of PDFs, simply call `UTI.pdf.mimeType`.
+#####Initialize from tags:
+
+Initializing an UTI from a file extension:
+
+```Swift
+let fileURL = URL(fileURLWithPath: ...)
+let fileUTI = UTI(withExtension: fileURL.pathExtension)
+```
+
+Forcing conformance to another UTI:
+
+```Swift
+let fileURL = URL(fileURLWithPath: ...)
+let fileUTI = UTI(withExtension: fileURL.pathExtension, conformingTo: UTI.package)
+```
+
+There are similar APIs to work with MIME types, pasteboard types, and OSTypes.
+
+#####Access tags:
+
+You can easily access tags from any UTI instance. For example to get the MIME type of PDFs, simply call `UTI.pdf.mimeType`.
 
