@@ -431,7 +431,7 @@ public extension UTI {
 	static       let  scalableVectorGraphics      =    UTI(rawValue:  kUTTypeScalableVectorGraphics      as  String)
 	@available(OSX 10.12, iOS 9.1, watchOS 2.1, *)
 	static       let  livePhoto					  =    UTI(rawValue:  kUTTypeLivePhoto					 as  String)
-    @available(OSX 10.12, iOS 9.1, *)
+	@available(OSX 10.12, iOS 9.1, *)
 	static       let  audiovisualContent          =    UTI(rawValue:  kUTTypeAudiovisualContent          as  String)
 	static       let  movie                       =    UTI(rawValue:  kUTTypeMovie                       as  String)
 	static       let  video                       =    UTI(rawValue:  kUTTypeVideo                       as  String)
