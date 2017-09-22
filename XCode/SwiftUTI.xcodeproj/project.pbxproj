@@ -45,7 +45,7 @@
 		D8ECF57F1E3F5FF600E9A903 /* SwiftUTI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUTI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ECF5BF1E3F6C8400E9A903 /* SwiftUTITests_macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUTITests_macOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ECF5C31E3F6C8500E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8ECF5CC1E3F6CB000E9A903 /* UTITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UTITests.swift; path = UTITests/UTITests.swift; sourceTree = "<group>"; };
+		D8ECF5CC1E3F6CB000E9A903 /* UTITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UTITests.swift; path = UTITests/UTITests.swift; sourceTree = "<group>"; usesTabs = 1; };
 		D8ECF5D21E3F6D6200E9A903 /* SwiftUTITests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUTITests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ECF5D61E3F6D6200E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
