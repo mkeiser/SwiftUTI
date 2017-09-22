@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if os(iOS)
+#if os(iOS) || os(watchOS)
 	import MobileCoreServices
 #elseif os(macOS)
 	import CoreServices
@@ -104,7 +104,7 @@ public class UTI: RawRepresentable, Equatable {
 		// UTTypeCreatePreferredIdentifierForTag only returns nil if the tag class is unknwown, which can't happen to us since we use an
 		// enum of known values. Hence we can force-cast the result.
 
-		let identifier = unamanagedIdentifier?.takeRetainedValue() as! String
+        let identifier = unamanagedIdentifier?.takeRetainedValue() as! String
 
 		self.init(rawValue: identifier)
 	}
@@ -193,7 +193,7 @@ public class UTI: RawRepresentable, Equatable {
 
 		let unmanagedTag = UTTypeCopyPreferredTagWithClass(self.rawCFValue, tagClass.rawCFValue)
 
-		guard let tag = unmanagedTag?.takeRetainedValue() as? String else {
+        guard let tag = unmanagedTag?.takeRetainedValue() as String? else {
 			return nil
 		}
 
@@ -310,7 +310,7 @@ public class UTI: RawRepresentable, Equatable {
 
 		let unamanagedDescription = UTTypeCopyDescription(self.rawCFValue)
 
-		guard let description = unamanagedDescription?.takeRetainedValue() as? String else {
+        guard let description = unamanagedDescription?.takeRetainedValue() as String? else {
 			return nil
 		}
 
@@ -336,7 +336,7 @@ public class UTI: RawRepresentable, Equatable {
 
 		let unamanagedURL = UTTypeCopyDeclaringBundleURL(self.rawCFValue)
 
-		guard let url = unamanagedURL?.takeRetainedValue() as? URL else {
+        guard let url = unamanagedURL?.takeRetainedValue() as URL? else {
 			return nil
 		}
 
@@ -429,8 +429,9 @@ public extension UTI {
 	static       let  ico                         =    UTI(rawValue:  kUTTypeICO                         as  String)
 	static       let  rawImage                    =    UTI(rawValue:  kUTTypeRawImage                    as  String)
 	static       let  scalableVectorGraphics      =    UTI(rawValue:  kUTTypeScalableVectorGraphics      as  String)
-	@available(OSX 10.12, iOS 9.1, *)
+	@available(OSX 10.12, iOS 9.1, watchOS 2.1, *)
 	static       let  livePhoto					  =    UTI(rawValue:  kUTTypeLivePhoto					 as  String)
+    @available(OSX 10.12, iOS 9.1, *)
 	static       let  audiovisualContent          =    UTI(rawValue:  kUTTypeAudiovisualContent          as  String)
 	static       let  movie                       =    UTI(rawValue:  kUTTypeMovie                       as  String)
 	static       let  video                       =    UTI(rawValue:  kUTTypeVideo                       as  String)
