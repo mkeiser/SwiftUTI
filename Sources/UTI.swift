@@ -104,7 +104,7 @@ public class UTI: RawRepresentable, Equatable {
 		// UTTypeCreatePreferredIdentifierForTag only returns nil if the tag class is unknwown, which can't happen to us since we use an
 		// enum of known values. Hence we can force-cast the result.
 
-        let identifier = unmanagedIdentifier?.takeRetainedValue() as! String
+		let identifier = unmanagedIdentifier?.takeRetainedValue() as! String
 
 		self.init(rawValue: identifier)
 	}
@@ -193,7 +193,7 @@ public class UTI: RawRepresentable, Equatable {
 
 		let unmanagedTag = UTTypeCopyPreferredTagWithClass(self.rawCFValue, tagClass.rawCFValue)
 
-        guard let tag = unmanagedTag?.takeRetainedValue() as String? else {
+		guard let tag = unmanagedTag?.takeRetainedValue() as String? else {
 			return nil
 		}
 
@@ -310,7 +310,7 @@ public class UTI: RawRepresentable, Equatable {
 
 		let unmanagedDescription = UTTypeCopyDescription(self.rawCFValue)
 
-        guard let description = unmanagedDescription?.takeRetainedValue() as String? else {
+		guard let description = unmanagedDescription?.takeRetainedValue() as String? else {
 			return nil
 		}
 
@@ -336,7 +336,7 @@ public class UTI: RawRepresentable, Equatable {
 
 		let unmanagedURL = UTTypeCopyDeclaringBundleURL(self.rawCFValue)
 
-        guard let url = unmanagedURL?.takeRetainedValue() as URL? else {
+		guard let url = unmanagedURL?.takeRetainedValue() as URL? else {
 			return nil
 		}
 

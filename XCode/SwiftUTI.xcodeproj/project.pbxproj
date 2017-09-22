@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		5045D6941F75847200153309 /* SwiftUTI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUTI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8ECF5481E3F5C8E00E9A903 /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTI.swift; sourceTree = "<group>"; };
+		D8ECF5481E3F5C8E00E9A903 /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTI.swift; sourceTree = "<group>"; usesTabs = 1; };
 		D8ECF56C1E3F5F3200E9A903 /* SwiftUTI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUTI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ECF56E1E3F5F3200E9A903 /* SwiftUTI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUTI.h; sourceTree = "<group>"; };
 		D8ECF56F1E3F5F3200E9A903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
