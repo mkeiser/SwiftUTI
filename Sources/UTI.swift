@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if os(iOS)
+#if os(iOS) || os(watchOS)
 	import MobileCoreServices
 #elseif os(macOS)
 	import CoreServices
@@ -99,12 +99,12 @@ public class UTI: RawRepresentable, Equatable {
 
 	public convenience init(withTagClass tagClass: TagClass, value: String, conformingTo conforming: UTI? = nil) {
 
-		let unamanagedIdentifier = UTTypeCreatePreferredIdentifierForTag(tagClass.rawCFValue, value as CFString, conforming?.rawCFValue)
+		let unmanagedIdentifier = UTTypeCreatePreferredIdentifierForTag(tagClass.rawCFValue, value as CFString, conforming?.rawCFValue)
 
 		// UTTypeCreatePreferredIdentifierForTag only returns nil if the tag class is unknwown, which can't happen to us since we use an
 		// enum of known values. Hence we can force-cast the result.
 
-		let identifier = unamanagedIdentifier?.takeRetainedValue() as! String
+		let identifier = unmanagedIdentifier?.takeRetainedValue() as! String
 
 		self.init(rawValue: identifier)
 	}
@@ -193,7 +193,7 @@ public class UTI: RawRepresentable, Equatable {
 
 		let unmanagedTag = UTTypeCopyPreferredTagWithClass(self.rawCFValue, tagClass.rawCFValue)
 
-		guard let tag = unmanagedTag?.takeRetainedValue() as? String else {
+		guard let tag = unmanagedTag?.takeRetainedValue() as String? else {
 			return nil
 		}
 
@@ -270,10 +270,10 @@ public class UTI: RawRepresentable, Equatable {
 
 	public static func utis(for tag: TagClass, value: String, conformingTo conforming: UTI? = nil) -> Array<UTI> {
 
-		let unamanagedIdentifiers = UTTypeCreateAllIdentifiersForTag(tag.rawCFValue, value as CFString, conforming?.rawCFValue)
+		let unmanagedIdentifiers = UTTypeCreateAllIdentifiersForTag(tag.rawCFValue, value as CFString, conforming?.rawCFValue)
 
 
-		guard let identifiers = unamanagedIdentifiers?.takeRetainedValue() as? Array<CFString> else {
+		guard let identifiers = unmanagedIdentifiers?.takeRetainedValue() as? Array<CFString> else {
 			return []
 		}
 
@@ -308,9 +308,9 @@ public class UTI: RawRepresentable, Equatable {
 	
 	public var description: String? {
 
-		let unamanagedDescription = UTTypeCopyDescription(self.rawCFValue)
+		let unmanagedDescription = UTTypeCopyDescription(self.rawCFValue)
 
-		guard let description = unamanagedDescription?.takeRetainedValue() as? String else {
+		guard let description = unmanagedDescription?.takeRetainedValue() as String? else {
 			return nil
 		}
 
@@ -321,9 +321,9 @@ public class UTI: RawRepresentable, Equatable {
 
 	public var declaration: [AnyHashable:Any]? {
 
-		let unamanagedDeclaration = UTTypeCopyDeclaration(self.rawCFValue)
+		let unmanagedDeclaration = UTTypeCopyDeclaration(self.rawCFValue)
 
-		guard let declaration = unamanagedDeclaration?.takeRetainedValue() as? [AnyHashable:Any] else {
+		guard let declaration = unmanagedDeclaration?.takeRetainedValue() as? [AnyHashable:Any] else {
 			return nil
 		}
 
@@ -334,9 +334,9 @@ public class UTI: RawRepresentable, Equatable {
 
 	public var declaringBundleURL: URL? {
 
-		let unamanagedURL = UTTypeCopyDeclaringBundleURL(self.rawCFValue)
+		let unmanagedURL = UTTypeCopyDeclaringBundleURL(self.rawCFValue)
 
-		guard let url = unamanagedURL?.takeRetainedValue() as? URL else {
+		guard let url = unmanagedURL?.takeRetainedValue() as URL? else {
 			return nil
 		}
 
@@ -429,8 +429,9 @@ public extension UTI {
 	static       let  ico                         =    UTI(rawValue:  kUTTypeICO                         as  String)
 	static       let  rawImage                    =    UTI(rawValue:  kUTTypeRawImage                    as  String)
 	static       let  scalableVectorGraphics      =    UTI(rawValue:  kUTTypeScalableVectorGraphics      as  String)
-	@available(OSX 10.12, iOS 9.1, *)
+	@available(OSX 10.12, iOS 9.1, watchOS 2.1, *)
 	static       let  livePhoto					  =    UTI(rawValue:  kUTTypeLivePhoto					 as  String)
+	@available(OSX 10.12, iOS 9.1, *)
 	static       let  audiovisualContent          =    UTI(rawValue:  kUTTypeAudiovisualContent          as  String)
 	static       let  movie                       =    UTI(rawValue:  kUTTypeMovie                       as  String)
 	static       let  video                       =    UTI(rawValue:  kUTTypeVideo                       as  String)
