@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftUTI'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'A swift wrapper around Apples Universal Type Identifier functions.'
 
 # This description is used to generate tags and improve search results.
