@@ -104,7 +104,7 @@ public class UTI: RawRepresentable, Equatable {
 		// UTTypeCreatePreferredIdentifierForTag only returns nil if the tag class is unknwown, which can't happen to us since we use an
 		// enum of known values. Hence we can force-cast the result.
 
-		let identifier = unmanagedIdentifier?.takeRetainedValue() as! String
+        let identifier = (unmanagedIdentifier?.takeRetainedValue() as String?)!
 
 		self.init(rawValue: identifier)
 	}
