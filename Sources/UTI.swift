@@ -277,7 +277,7 @@ public class UTI: RawRepresentable, Equatable {
 			return []
 		}
 
-		return identifiers.flatMap { UTI(rawValue: $0 as String) }
+		return identifiers.compactMap { UTI(rawValue: $0 as String) }
 	}
 
 	// MARK: Equality and Conformance to other UTIs
