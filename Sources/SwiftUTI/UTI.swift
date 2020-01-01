@@ -146,7 +146,7 @@ public class UTI: RawRepresentable, Equatable {
 	/**
 
 	Initialize an UTI with a pasteboard type.
-	
+    - Important: **This function is de-facto deprecated!** The old cocoa pasteboard types ( `NSStringPboardType`, `NSPDFPboardType`, etc) have been deprecated in favour of actual UTIs, and the constants are not available anymore in Swift. This function only works correctly with the values of these old constants, but _not_ with the replacement values (like `NSPasteboardTypeString` etc), since these already are UTIs.
 	- Parameters:
 		- pbType: The pasteboard type (e.g. NSPDFPboardType).
 		- conformingTo: If specified, the returned UTI must conform to this UTI. If nil is specified, this parameter is ignored. The default is nil.

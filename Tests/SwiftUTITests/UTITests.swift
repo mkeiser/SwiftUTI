@@ -11,8 +11,9 @@ import SwiftUTI
 
 #if os(iOS)
 	import MobileCoreServices
-#elseif os(OSX)
+#elseif os(macOS)
 	import CoreServices
+    import AppKit
 #endif
 
 class UTI_Tests: XCTestCase {
@@ -50,32 +51,47 @@ class UTI_Tests: XCTestCase {
 		XCTAssertFalse( uti1.conforms(to: uti3) )
 	}
 
-	func testTags() {
+    // MARK: Tags
 
-		let uti1 = UTI.pdf
+    func assertUTIIdentical(_ uti1: UTI, _ uti2: UTI) {
 
-		var uti2 = UTI(withExtension: "pdf")
-		XCTAssertTrue( uti1 == uti2 )
+        XCTAssertTrue(uti1 == uti2)
+        XCTAssertEqual(uti1.fileExtension, uti2.fileExtension)
+        XCTAssertEqual(uti1.mimeType, uti2.mimeType)
 
-		uti2 = UTI(withMimeType: "application/pdf")
-		XCTAssertTrue( uti1 == uti2 )
+        #if os(macOS)
+        XCTAssertEqual(uti1.pbType, uti2.pbType)
+        XCTAssertEqual(uti1.osType, uti2.osType)
+        #endif
+    }
 
-		#if os(macOS)
-		uti2 = UTI(withPBType: NSPDFPboardType) // Note: NSPasteboardTypePDF doesn't work
-		XCTAssertTrue( uti1 == uti2 )
+    func testExtension() {
 
-		uti2 = UTI(withOSType: "PDF ")
-		XCTAssertTrue( uti1 == uti2 )
-		#endif
+        let uti = UTI(withExtension: "pdf")
+        assertUTIIdentical(uti, UTI.pdf)
+    }
 
-		XCTAssertEqual(uti1.fileExtension, uti2.fileExtension)
-		XCTAssertEqual(uti1.mimeType, uti2.mimeType)
+    func testMIMEType() {
 
-		#if os(macOS)
-		XCTAssertEqual(uti1.pbType, uti2.pbType)
-		XCTAssertEqual(uti1.osType, uti2.osType)
-		#endif
-	}
+        let uti = UTI(withMimeType: "application/pdf")
+        assertUTIIdentical(uti, UTI.pdf)
+    }
+
+    #if os(macOS)
+
+    func testPBType() {
+        // The old Cocoa pasteboard types have been deprecated in favour of actual UTIs. We are using the content of
+        // the old NSPDFPboardType to do this test.
+        let uti = UTI(withPBType: "Apple PDF pasteboard type")
+        assertUTIIdentical(uti, UTI.pdf)
+    }
+
+    func testOSType() {
+        let uti = UTI(withOSType: "PDF ")
+        assertUTIIdentical(uti, UTI.pdf)
+    }
+
+    #endif
 
 	func testDynamic() {
 
