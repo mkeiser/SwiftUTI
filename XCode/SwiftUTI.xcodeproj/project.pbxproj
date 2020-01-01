@@ -291,15 +291,18 @@
 				TargetAttributes = {
 					5045D6931F75847200153309 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					D8ECF56B1E3F5F3200E9A903 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = V85GBYB7B9;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					D8ECF5751E3F5FF600E9A903 = {
 						DevelopmentTeam = V85GBYB7B9;
+						LastSwiftMigration = 1010;
 					};
 					D8ECF5BE1E3F6C8400E9A903 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -456,7 +459,8 @@
 				PRODUCT_NAME = SwiftUTI;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -489,7 +493,8 @@
 				PRODUCT_NAME = SwiftUTI;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -624,7 +629,7 @@
 				PRODUCT_NAME = SwiftUTI;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -648,7 +653,7 @@
 				PRODUCT_NAME = SwiftUTI;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -672,7 +677,8 @@
 				PRODUCT_NAME = SwiftUTI;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -696,7 +702,8 @@
 				PRODUCT_NAME = SwiftUTI;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
