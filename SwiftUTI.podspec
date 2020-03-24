@@ -35,6 +35,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Sources/SwiftUTI/*'
 
-  s.osx.framework = 'CoreServices'
-  s.ios.framework = 'MobileCoreServices'
+  s.framework = 'CoreServices'
 end
